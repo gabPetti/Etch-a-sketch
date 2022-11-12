@@ -1,11 +1,13 @@
-function canvasSize(x, y) {
+function canvasSize() {
     canvas = document.getElementById('canvas');
-    
-    num = x * y;
+    canvasX = parseInt(document.querySelector("#canvas-x").value);
+    canvasY = parseInt(document.querySelector("#canvas-y").value);
+
+    num = canvasX * canvasY;
 
     for (let i = 0; i < num; i++) {
         canvas.innerHTML = canvas.innerHTML + "<div></div>";
     }
 }
 
-canvasSize(16, 16);
+canvasSize();

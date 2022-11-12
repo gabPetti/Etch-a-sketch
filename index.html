@@ -9,12 +9,30 @@
 </head>
 <body>
     <header>
-        <h1>Etch a Sketch</h1>
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                Etch a Sketch
+              </a>
+            </div>
+          </nav>
     </header>
 
-    <aside>
-        
-    </aside>
+    <article>
+        <aside>
+            <section>
+                <h3>Canvas size:</h3>
+
+                <input type="range" id="canvas-x" name="canvas-x" value="8" min="1" max="80">
+                <label for="canvas-x"></label>
+                
+                <input type="range" id="canvas-y" name="canvas-y" value="8" min="1" max="80">
+                <label for="canvas-x"></label>
+
+                <button onclick="canvasSize()">Generate</button>
+            </section>
+        </aside>
+    </article>
 
     <main>
         <div id="canvas"></div>
