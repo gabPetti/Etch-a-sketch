@@ -1,37 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif;
+    color: white;
+}
+
 nav {
+    width: 100vw;
+    height: 60px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: transparent;
+    pointer-events: none;
+}
+
+nav #logo {
+    height: 40px;
 }
 
 #content {
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 aside {
     width: 20vw;
     height: 100vh;
+
+    padding: 15px 0 0 15px;
+    background-color: #161616;
+}
+
+button {
+    width: 90px;
+    height: 30px;
+
+    border: 2px solid yellow;
+    /* border-radius: 15px; */
+
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+button:hover {
+    border: 2px solid #808000;
+}
+
+aside input {
+    width: 70%;
+    height: 4px;
+    outline: none;
+    appearance: none;
+    background: whitesmoke;
+}
+
+aside input::-webkit-slider-thumb,
+aside input::-moz-range-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    
+    border: 3px solid yellow;
+    border-radius: 10px;
+    
+    background-color: #161616;
 }
 
 main {
     width: 80vw;
     height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background-color: #303032;
 }
 
 main #canvas {
-
     display: grid;
-    grid-template-columns: 10px 10px 10px 1px 10px 10px 10px 10px 10px;
-    background-color: white;
+    border: 1px solid gray;
+
+    background-color: #303032;
 }
 
 main #canvas div {
     width: 15px;
     height: 15px;
     border: 1px solid gray;
+    background-color: white;
 }
 
 main #canvas div:hover {

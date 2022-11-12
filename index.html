@@ -5,29 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch a Sketch</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <header>
-        <nav class="navbar bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-                Etch a Sketch
-              </a>
-            </div>
-          </nav>
+        <nav>
+            <img src="./images/etch-a-sketch-logo.png" alt="logo" id="logo">
+        </nav>
     </header>
     <div id="content">
         <article>
             <aside>
                 <section>
                     <h3>Canvas size:</h3>
-    
-                    <input type="range" id="canvas-x" name="canvas-x" value="32" min="1" max="48">
-                    <label for="canvas-x"></label>
                     
-                    <input type="range" id="canvas-y" name="canvas-y" value="32" min="1" max="48">
-                    <label for="canvas-x"></label>
+                    <p>Horizontal</p>
+                    <input type="range" id="canvas-x" name="canvas-x" value="32" min="1" max="48">
+                    <label for="canvas-x" id="x-value"></label>
+                    
+                    <p>Vertical</p>
+                    <input type="range" id="canvas-y" name="canvas-y" value="32" min="1" max="48" oninput="SliderValue">
+                    <label for="canvas-x" id="y-value"></label><br><br>
     
                     <button onclick="canvasSize()">Generate</button>
                 </section>

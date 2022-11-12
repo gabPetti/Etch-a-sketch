@@ -15,3 +15,18 @@ function canvasSize() {
 }
 
 canvasSize();
+
+var sliderX = document.getElementById("canvas-x");
+var sliderY = document.getElementById("canvas-y");
+var outputX = document.getElementById("x-value");
+var outputY = document.getElementById("y-value");
+outputX.innerHTML = sliderX.value;
+outputY.innerHTML = sliderY.value
+
+sliderX.oninput = function() {
+    outputX.innerHTML = this.value;
+}
+
+sliderY.oninput = function() {
+    outputY.innerHTML = this.value;
+}
