@@ -3,3 +3,37 @@ nav {
     align-items: center;
     justify-content: center;
 }
+
+#content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+aside {
+    width: 20vw;
+    height: 100vh;
+}
+
+main {
+    width: 80vw;
+    height: 100vh;
+    background-color: #303032;
+}
+
+main #canvas {
+
+    display: grid;
+    grid-template-columns: 10px 10px 10px 1px 10px 10px 10px 10px 10px;
+    background-color: white;
+}
+
+main #canvas div {
+    width: 15px;
+    height: 15px;
+    border: 1px solid gray;
+}
+
+main #canvas div:hover {
+    background-color: black;
+}
