@@ -16,7 +16,7 @@ body {
 
 nav {
     width: 80vw;
-    height: 60px;
+    height: 50px;
 
     display: flex;
     flex-direction: column;
@@ -31,20 +31,22 @@ nav {
     transition: 0.5s;
 }
 
+/* Header -------------------------------------------- */
+
 nav.on {
     width: 100vw;
 }
 
 nav #logo {
     align-self: center;
-    height: 40px;
+    height: 30px;
 }
 
 nav #close-aside {
     align-self: flex-start;
     margin-left: 10px;
-    margin-bottom: -40px;
-    height: 40px;
+    margin-bottom: -30px;
+    height: 30px;
     cursor: pointer;
 }
 
@@ -52,7 +54,7 @@ nav #close-aside.on {
     rotate: 180deg;
 }
 
-/* Aside */
+/* Aside --------------------------------------------*/
 
 aside {
     width: 20vw;
@@ -79,10 +81,6 @@ aside hr {
     border: 1px solid #303030;
 }
 
-aside h2 {
-    margin-bottom: 15px;
-}
-
 aside .color {
     width: 40px;
     height: 40px;
@@ -107,17 +105,18 @@ aside button:hover {
     border: 2px solid #808000;
 }
 
-aside .range {
+aside .canvas-size .range {
     width: 70%;
     height: 4px;
 
     margin: 15px 10px 15px 0;
     appearance: none;
     background: whitesmoke;
+    cursor: pointer;
 }
 
-aside .range::-webkit-slider-thumb,
-aside .range::-moz-range-thumb {
+aside .canvas-size .range::-webkit-slider-thumb,
+aside .canvas-size .range::-moz-range-thumb {
     appearance: none;
     width: 15px;
     height: 15px;
@@ -131,6 +130,10 @@ aside .range::-moz-range-thumb {
 aside .canvas-size > div {
     display: flex;
     align-items: center;
+}
+
+aside .canvas-size label {
+    font-size: 14px;
 }
 
 aside .toggle {
@@ -166,7 +169,7 @@ aside .toggle.on .toggle-thumb {
     margin-left: 32px;
 }
 
-/* Main */
+/* Main --------------------------------------------*/
 
 main {
     width: 80vw;
@@ -189,13 +192,14 @@ main.on {
 }
 
 main #canvas {
+    width: 80vh;
+    height: 80vh;
+    display: grid;
     background-color: #303030;
+    cursor: crosshair;
 }
 
 main #canvas div {
-    width: 15px;
-    height: 15px;
-    display: inline-block;
     background-color: white;
 }
 
