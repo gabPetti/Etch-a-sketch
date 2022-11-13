@@ -22,8 +22,18 @@
         <article>
             <aside>   
                 <section class="paint-color">
-                    <p>Pen color</p>
+                    <p>Normal pen color</p>
                     <input type="color" value="#000" class="color" oninput="changePenColor()">
+                </section>
+
+                <hr>
+
+                <section class="toggle-rainbow">
+                    <p>Rainbow pen</p>
+
+                    <div class="toggle rainbow" onclick="toggleRainbow()">
+                        <div class="toggle-thumb"></div>
+                    </div>
                 </section>
 
                 <hr>
@@ -41,7 +51,7 @@
                 <hr>
 
                 <section class="toggle-gridlines">
-                    <p>Toggle gridlines</p>
+                    <p>Gridlines</p>
 
                     <div class="toggle" onclick="toggleGridlines()">
                         <div class="toggle-thumb"></div>

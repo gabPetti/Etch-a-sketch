@@ -40,12 +40,28 @@ function changePenColor() {
 }
 
 function coloring(event) {
-    event.style.backgroundColor = document.querySelector(".color").value;
+    if (document.querySelector("aside .rainbow").classList.contains("on")) {
+        event.style.backgroundColor = rgbGenerator();
+    } else {
+        event.style.backgroundColor = document.querySelector(".color").value;
+    }
 }
 
 function toggleGridlines() {
-    var toggle = document.querySelector(".toggle");
+    var toggle = document.querySelector(".toggle-gridlines .toggle");
     var gridlines = document.getElementById("canvas");
     toggle.classList.toggle("on");
     gridlines.classList.toggle("on");
+}
+
+function toggleRainbow() {
+    var toggle = document.querySelector(".toggle-rainbow .toggle");
+    toggle.classList.toggle("on");
+}
+
+function rgbGenerator() {
+    hexaArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"]
+    Math.random() * 16
+    randomRGB = 'rgb(' + (Math.random() * 255).toString() + ',' + (Math.random() * 255).toString() + ',' + (Math.random() * 255).toString() + ')';
+    return randomRGB
 }
