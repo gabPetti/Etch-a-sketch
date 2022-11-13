@@ -18,7 +18,7 @@ function toggleAside() {
     navbar.classList.toggle("on");
 }
 
-function canvasSize() {
+function createCanvas() {
     var canvas = document.getElementById('canvas');
     canvas.innerHTML = "";
 
@@ -64,4 +64,11 @@ function rgbGenerator() {
     Math.random() * 16
     randomRGB = 'rgb(' + (Math.random() * 255).toString() + ',' + (Math.random() * 255).toString() + ',' + (Math.random() * 255).toString() + ')';
     return randomRGB
+}
+
+function clearCanvas() {
+    var divs = document.querySelectorAll("#canvas div");
+    for (let i = 0; i < divs.length; i++) {
+        divs[i].style.backgroundColor = 'white';
+    }
 }

@@ -56,6 +56,12 @@ nav #close-aside.on {
 
 /* Aside --------------------------------------------*/
 
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 aside {
     width: 20vw;
     height: 100vh;
