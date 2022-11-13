@@ -1,32 +1,49 @@
+var slider = document.getElementById("canvas-size");
+var sliderOutput = document.getElementById("size-value");
+sliderOutput.innerHTML = slider.value + ' x ' + slider.value;
+
+slider.oninput = function() {
+    sliderOutput.innerHTML = this.value + ' x ' + this.value;
+}
+
 function canvasSize() {
-    canvas = document.getElementById('canvas');
+    var canvas = document.getElementById('canvas');
     canvas.innerHTML = "";
-    canvasX = parseInt(document.querySelector("#canvas-x").value);
-    canvasY = parseInt(document.querySelector("#canvas-y").value);
 
-    num = canvasX * canvasY;
-
+    var canvasSize = parseInt(document.querySelector("#canvas-size").value);
+    var num = canvasSize * canvasSize;
     for (let i = 0; i < num; i++) {
-        canvas.innerHTML = canvas.innerHTML + "<div></div>";
+        canvas.innerHTML = canvas.innerHTML + '<div onmouseover="coloring(this)"></div>';
     }
 
-    canvasGridTemplateText = " 15px".repeat(canvasX);
-    canvas.style.cssText = 'grid-template-columns:' + canvasGridTemplateText + ';';
+    canvas.style.cssText = 'width: ' + (canvasSize * 15).toString() + 'px;';
 }
 
 canvasSize();
 
-var sliderX = document.getElementById("canvas-x");
-var sliderY = document.getElementById("canvas-y");
-var outputX = document.getElementById("x-value");
-var outputY = document.getElementById("y-value");
-outputX.innerHTML = sliderX.value;
-outputY.innerHTML = sliderY.value
-
-sliderX.oninput = function() {
-    outputX.innerHTML = this.value;
+function coloring(event) {
+    event.style.backgroundColor = document.querySelector(".color").value;
 }
 
-sliderY.oninput = function() {
-    outputY.innerHTML = this.value;
+function changePenColor() {
+    pen = document.querySelector(".color").value;
+}
+
+function toggleGridlines() {
+    var toggle = document.querySelector(".toggle");
+    var gridlines = document.getElementById("canvas");
+    toggle.classList.toggle("on");
+    gridlines.classList.toggle("on");
+}
+
+function toggleAside() {
+    var aside = document.querySelector("aside");
+    var navbar = document.querySelector("nav")
+    var main = document.querySelector("main");
+    var closeAside = document.getElementById("close-aside");
+
+    aside.classList.toggle("on");
+    closeAside.classList.toggle("on");
+    main.classList.toggle("on");
+    navbar.classList.toggle("on");
 }

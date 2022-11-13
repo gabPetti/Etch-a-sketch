@@ -7,42 +7,94 @@
     color: white;
 }
 
-nav {
+body {
+    position: relative;
     width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+nav {
+    width: 80vw;
     height: 60px;
 
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
 
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
+    z-index: 2;
 
     background-color: transparent;
-    pointer-events: none;
+    transition: 0.5s;
+}
+
+nav.on {
+    width: 100vw;
 }
 
 nav #logo {
+    align-self: center;
     height: 40px;
 }
 
-#content {
-    display: flex;
+nav #close-aside {
+    align-self: flex-start;
+    margin-left: 10px;
+    margin-bottom: -40px;
+    height: 40px;
+    cursor: pointer;
 }
+
+nav #close-aside.on {
+    rotate: 180deg;
+}
+
+/* Aside */
 
 aside {
     width: 20vw;
     height: 100vh;
 
-    padding: 15px 0 0 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px;
     background-color: #161616;
 }
 
-button {
+aside.on {
+    animation: asideMove 0.5s forwards;
+}
+
+@keyframes asideMove {
+    from {left: 0}
+    to {left: -20vw}
+}
+
+aside hr {
+    margin: 20px 0;
+    border: 1px solid #303030;
+}
+
+aside h2 {
+    margin-bottom: 15px;
+}
+
+aside .color {
+    width: 40px;
+    height: 40px;
+    margin: 15px 0;
+    border: 1px solid white;
+}
+
+aside button {
     width: 90px;
     height: 30px;
 
+    margin-top: 20px;
     border: 2px solid yellow;
     /* border-radius: 15px; */
 
@@ -51,20 +103,21 @@ button {
     transition: 0.1s;
 }
 
-button:hover {
+aside button:hover {
     border: 2px solid #808000;
 }
 
-aside input {
+aside .range {
     width: 70%;
     height: 4px;
-    outline: none;
+
+    margin: 15px 10px 15px 0;
     appearance: none;
     background: whitesmoke;
 }
 
-aside input::-webkit-slider-thumb,
-aside input::-moz-range-thumb {
+aside .range::-webkit-slider-thumb,
+aside .range::-moz-range-thumb {
     appearance: none;
     width: 15px;
     height: 15px;
@@ -75,31 +128,81 @@ aside input::-moz-range-thumb {
     background-color: #161616;
 }
 
+aside .canvas-size > div {
+    display: flex;
+    align-items: center;
+}
+
+aside .toggle {
+    width: 60px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+
+    margin: 15px 0;
+    border: 2px solid yellow;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+aside .toggle-thumb {
+    width: 22px;
+    height: 22px;
+
+    margin: 0 3px;
+    border-radius: 12px;
+
+    background-color: yellow;
+    transition: 0.3s;
+}
+
+aside .toggle.on {
+    background-color: #828282;
+}
+
+aside .toggle.on .toggle-thumb {
+    margin-left: 32px;
+}
+
+/* Main */
+
 main {
     width: 80vw;
     height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
 
+    line-height: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background-color: #303032;
+    background-color: #303030;
+    transition: 0.5s;
+}
+
+main.on {
+    width: 100vw;
 }
 
 main #canvas {
-    display: grid;
-    border: 1px solid gray;
-
-    background-color: #303032;
+    background-color: #303030;
 }
 
 main #canvas div {
     width: 15px;
     height: 15px;
-    border: 1px solid gray;
+    display: inline-block;
     background-color: white;
 }
 
-main #canvas div:hover {
+main #canvas.on div {
+    border: 1px solid gray;
+}
+
+main #canvas div.active {
     background-color: black;
 }

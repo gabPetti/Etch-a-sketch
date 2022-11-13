@@ -14,25 +14,43 @@
 <body>
     <header>
         <nav>
+            <img src="./images/header-arrow.png" alt="close-open aside" id="close-aside" onclick="toggleAside()">
             <img src="./images/etch-a-sketch-logo.png" alt="logo" id="logo">
         </nav>
     </header>
     <div id="content">
         <article>
             <aside>
-                <section>
-                    <h3>Canvas size:</h3>
+                <h2>Canvas style:</h2>
+                
+                <section class="paint-color">
+                    <p>Pen color</p>
+                    <input type="color" class="color" oninput="changePenColor()">
+                </section>
+
+                <hr>
+
+                <section class="canvas-size">
+                    <p>Canvas size</p>
+                    <div>
+                        <input type="range" class="range" id="canvas-size" name="canvas-size" value="3" min="1" max="64">
+                        <label for="canvas-size" id="size-value"></label>
+                    </div>
                     
-                    <p>Horizontal</p>
-                    <input type="range" id="canvas-x" name="canvas-x" value="32" min="1" max="48">
-                    <label for="canvas-x" id="x-value"></label>
-                    
-                    <p>Vertical</p>
-                    <input type="range" id="canvas-y" name="canvas-y" value="32" min="1" max="48" oninput="SliderValue">
-                    <label for="canvas-x" id="y-value"></label><br><br>
-    
                     <button onclick="canvasSize()">Generate</button>
                 </section>
+
+                <hr>
+
+                <section class="toggle-gridlines">
+                    <p>Toggle gridlines</p>
+
+                    <div class="toggle" onclick="toggleGridlines()">
+                        <div class="toggle-thumb"></div>
+                    </div>
+                </section>
+
+                <hr>
             </aside>
         </article>
     
